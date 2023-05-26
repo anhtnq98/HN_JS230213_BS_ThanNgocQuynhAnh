@@ -26,6 +26,14 @@ function App() {
       });
   };
 
+  const handleDelete = (id) => {
+    fetch(`http://localhost:5000/${id}`, { method: "DELETE" })
+      .then((response) => response.json())
+      .then((data) => {
+        renderData();
+      });
+  };
+
   useEffect(() => {
     renderData();
   }, []);
@@ -56,7 +64,10 @@ function App() {
             <div className="block">
               <div className="text">{note.Content}</div>
               <div className="delete-container">
-                <div className="delete">
+                <div
+                  className="delete"
+                  onClick={(e) => handleDelete(note.Note_id)}
+                >
                   <i class="fa-sharp fa-solid fa-trash"></i>
                 </div>
               </div>
