@@ -1,6 +1,17 @@
+import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const [inputValue, setInput] = useState("");
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleClick = (e) => {
+    
+  };
+
   return (
     <div className="App">
       <div className="title">Note App</div>
@@ -13,15 +24,17 @@ function App() {
             cols="38"
             rows="4"
             placeholder="Take a note..."
+            value={inputValue}
+            onChange={(e) => handleChange(e)}
           ></textarea>
         </div>
-        <div className="add">
+        <div className="add" onClick={handleClick}>
           <i class="fa-sharp fa-solid fa-plus"></i>
         </div>
       </div>
       <div className="render-container">
         <div className="block">
-          <div className="text">adbfạdbfạkfạkfạksfnhàậnkfc</div>
+          <div className="text">Ahuhu</div>
           <div className="delete-container">
             <div className="delete">
               <i class="fa-sharp fa-solid fa-trash"></i>
@@ -29,7 +42,7 @@ function App() {
           </div>
         </div>
         <div className="block">
-          <div className="text">adbfạdbfạkfạkfạksfnhàậnkfc</div>
+          <div className="text">Điểm kém rồi</div>
           <div className="delete-container">
             <div className="delete">
               <i class="fa-sharp fa-solid fa-trash"></i>
