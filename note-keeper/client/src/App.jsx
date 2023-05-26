@@ -13,8 +13,9 @@ function App() {
     fetch("http://localhost:5000/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ inputValue }),
+      body: JSON.stringify({ Content: inputValue }),
     });
+    renderData();
   };
 
   const renderData = () => {
@@ -62,7 +63,6 @@ function App() {
             </div>
           </>
         ))}
-  
       </div>
     </div>
   );
